@@ -97,7 +97,8 @@ ENV LANGUAGE=en_US
 # Install bash and su-exec. These are required by the shell scripts we copied over right after starting build stage 2.
 RUN apk --no-cache add \
   bash \
-  su-exec
+  su-exec \
+  openssl
 
 # Copy the github-pages gem we installed during stage 1 into an identical folder within the new build stage.
 COPY --from=build /usr/gem/ /usr/gem/
